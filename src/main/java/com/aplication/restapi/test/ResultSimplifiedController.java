@@ -29,7 +29,14 @@ class ResultSimplifiedController {
 
   // Aggregate root
 
-
+		/**
+		 * Returns  code, organization and url of al results from remote API
+		 *
+		 * 
+		 * @return list of results
+		 *
+		 * 
+		 */
 	@GetMapping("/resultSimplified")
 	  CollectionModel<EntityModel<ResultSimplified>> all() {
 
@@ -47,7 +54,15 @@ class ResultSimplifiedController {
 	  }
 	
 	
-	
+	/**
+	 * Given and id, returns only this result
+	 *
+	 * @param Long id
+	 * 
+	 * @return list of results
+	 *
+	 * 
+	 */
 	 @GetMapping("/resultSimplified/{id}")
 	  EntityModel<ResultSimplified> one(@PathVariable Long id) {
 
@@ -57,7 +72,16 @@ class ResultSimplifiedController {
 	    return assembler.toModel(result);
 	  }
 	 
-	
+		/**
+		 * Given a language, returns all the results with the URL in this language
+		 * if the language is not properly determined,  it returns the list in default lnaguage (catalan)
+		 *
+		 * @param String lang
+		 * 
+		 * @return list of results
+		 *
+		 * 
+		 */
 	@GetMapping("/resultSimplifiedbyLang/{lang}")
 	  CollectionModel<EntityModel<ResultSimplified>> allLang(@PathVariable String lang) {
 		List<EntityModel<ResultSimplified>> results = repository.findAll().stream()
