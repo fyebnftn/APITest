@@ -23,7 +23,7 @@ class TestApplicationTests {
     private final static String INPUT_CA = "ca";
     private final static String INPUT_ES = "es";
     private final static String INPUT_EN = "en";
-    private final static String INPUT_OTHER = "au";
+    private final static String INPUT_OTHER = "fr";
     private final static String INPUT_NUMBER = "1";
     
     private ResultSimplifiedController resultSimplifiedController;
